@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
+* {
+  --sans-serif: "Raleway", sans-serif;
+  --font-light: 300;
+  --font-bold: 700;
+
+  /* // Colors */
+  --black: #353535;
+  --gray: #4f4f4f;
+  --medium-gray: #737373;
+  --light-gray: #c4c4c4;
+  --orange: #f96855;
+
+  /* // Semantic color names */
+  --accent: var(--orange);
+
+  --body-background: var(--black);
+  --menu-background: var(--gray);
+
+  --main-font-color: var(--light-gray);
+  --menu-active-color: var(--light-gray);
+  --menu-font-color: var(--medium-gray);
+  --link-color: var(--accent);
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  background-color: var(--body-background);
+  color: var(--main-font-color);
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  background: var(--menu-background);
+  flex: 1 1 20%;
+  /* 자식요소에 적용(flex-grow, flex-shrink, flex-basis)default is(0, 1, auto) */
+  /* flex-grow는 아이템이 flex-basis보다 커질수 있는지를 결정하는 요소 */
+  /* flex-grow에 들어가는 숫자의 의미는 아이템들의 flex-basis를 제외한 여백부분들을 flex-grow에 지정된 숫자의 비율로 가져가는것! 기본값은 0이다. */
+  /* flex-shrink는 flex-grow와 쌍을 이루는 속성으로 아이템이 flex-basis보다 작아질수 있는 지를 결정 */
+  /* grow와 다르게 기본값은 1이기 때문에 자동적으로 작아질 수 있었으나, 0으로 세팅하면 크기가 flex-basis보다 작아질 수 없기에 고정폭의 칼럼을 유지하는 것이 가능 */
+  /* 주의점! 플렉스박스 속성으로 "flex-wrap: wrap;" 이 적용되면 이 속성은 무시된다. */
+  /* flex-basis는 최솟값을 의미. 즉, 20%보다 작더라도 적어도 20%차지, 많으면 많은만큼 차지 */
+  /* 근데 여기에서는 20%보다 작아지면, 컨텐티 디브가 다음줄로 넘어가도록 flex-wrap을 wrap으로 설정하여 반응형 완성 */
+  min-width: 300px;
+  /* 최소 넒이를 고정. 300보다 컨텐츠 내용이 작더라고 하더라도 300고정  이 넓이를 넘어가게 되면 플렉스 그로우에 설정한대로 늘어난다.  */
+  padding: 3em;
+}
+
+.logo {
+  text-transform: uppercase;
+  margin-bottom: 2em;
+}
+.logo span {
+  font-weight: var(--font-bold);
+}
+.nav-item {
+  color: var(--menu-font-color);
+  text-decoration: none;
+  font-size: 1.7rem;
+  display: inline-block;
+  margin-right: 2em;
+}
+.nav-item.active {
+  color: var(--menu-active-color);
+}
+.main-content {
+  padding: 10%;
+  flex: 1 1 80%;
+  min-height: 100vh;
+}
+
+@media (min-width: 1500px) {
+  .logo {
+    margin-bottom: 5em;
+  }
+  .nav-item {
+    display: block;
+    margin: 7vh 0;
+  }
+}

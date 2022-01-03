@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+.grid-ish {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.grid-ish > * {
+  flex: 1 1 10em;
+  /* flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 100%; */
+}
+.content-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.content-sidebar > *:nth-child(1) {
+  flex: 1 1 70%;
+  min-width: 30ch;
+}
+.content-sidebar > *:nth-child(2) {
+  flex: 1 1 25%;
+  min-width: 15ch;
+}
+.content {
+  width: 70vw;
+  height: 100%;
+  /* height: 70vw; */
+  margin: 3rem auto;
+  padding: 3em;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.3);
+  background: white;
+}
+.title {
+  color: rgb(194, 116, 90);
+}
+.even-columns {
+  display: flex;
+  gap: 1em;
+}
+.even-columns > * {
+  flex-basis: 100%;
+  /* flex-basis:33% 와 같이 적게 되면 칼럼이 3개일때만 제대로 적용된다. 이렇게 하지말자 */
+}
+
+.col {
+  padding: 3em;
+  border: 1px rgb(100, 100, 100) solid;
+  background-color: rgb(197, 197, 197);
+}

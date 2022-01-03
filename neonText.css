@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(34, 34, 34);
+}
+h1 {
+  animation: blink 1.5s infinite alternate;
+}
+.container {
+  margin-top: 10em;
+  text-align: center;
+}
+
+.text {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 0 0 6px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #62227d,
+    0 0 82px #62227d, 0 0 92px #62227d, 0 0 102px #62227d, 0 0 151px #62227d;
+}
+
+.border-box {
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  margin-top: 10em;
+  padding: 3em;
+  border: 0.2rem solid #fff;
+  border-radius: 2em;
+  width: 50%;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+
+  animation: flickBox 1.5s infinite alternate-reverse;
+}
+.border-box > h1 {
+  font-size: 5.2rem;
+  animation: pulsate 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #62227d,
+      0 0 80px #62227d, 0 0 90px #62227d, 0 0 100px #62227d,
+      0 0 150px rgb(17, 226, 69);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes flickBox {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    box-shadow: 0 0 4px #fff, 0 0 10px #fff, 0px 0 21px #fff, 0px 0 42px #62227d,
+      0 0 82px #62227d, inset 0 0 1.7rem #bc13fe;
+  }
+  20%,
+  24%,
+  55% {
+    box-shadow: none;
+  }
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #5271ff,
+      0 0 80px #5271ff, 0 0 90px #5271ff, 0 0 100px #5271ff, 0 0 150px #5271ff;
+  }
+
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #5271ff,
+      0 0 63px #5271ff, 0 0 70px #5271ff, 0 0 74px #5271ff, 0 0 140px #5271ff;
+  }
+}
+.box__container {
+  margin-bottom: 5em;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+.flickbtn {
+  text-decoration: none;
+  outline: none;
+  padding: 1em 2em;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 3em;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #5271ff,
+    0 0 23px #5271ff, 0 0 30px #5271ff, 0 0 44px #5271ff, 0 0 60px #5271ff,
+    inset 0 0 1em #5271ff;
+}
+.flickbtn:hover {
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #5271ff,
+    0 0 80px #5271ff, 0 0 90px #5271ff, 0 0 100px #5271ff, 0 0 150px #5271ff;
+}
+.flickbtn:active {
+  transform: scale(0.9);
+}
